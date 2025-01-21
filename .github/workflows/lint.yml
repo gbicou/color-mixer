@@ -1,0 +1,27 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Composer Install dependencies
+        uses: php-actions/composer@v6
+
+      - name: PHPUnit Tests
+        uses: php-actions/phpstan@v3
+        with:
+          path: src/ tests/
+          level: 6
+          error_format: github
