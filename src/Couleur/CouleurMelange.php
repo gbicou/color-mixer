@@ -3,8 +3,8 @@
 namespace Bicou\Melange\Couleur;
 
 use Bicou\Melange\Melange;
-use matthieumastadenis\couleur\ColorFactory;
 use matthieumastadenis\couleur\ColorInterface;
+use matthieumastadenis\couleur\colors\LinRgb;
 
 class CouleurMelange
 {
@@ -12,6 +12,6 @@ class CouleurMelange
     {
         $c = Melange::mix(new CouleurColor($color1), new CouleurColor($color2), $ratio);
 
-        return ColorFactory::newLinRgb([$c->getRed(), $c->getGreen(), $c->getBlue()]);
+        return new LinRgb($c->getRed(), $c->getGreen(), $c->getBlue(), $c->getOpacity());
     }
 }
