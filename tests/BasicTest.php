@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class BasicTest extends TestCase
 {
-    public function testOpacity()
+    public function testOpacity(): void
     {
         $start = new Color(1, 1, 1, 0);
         $end = new Color(1, 1, 1, 1);
@@ -17,7 +17,7 @@ class BasicTest extends TestCase
         $this->assertEquals(0.5, $middle->getOpacity());
     }
 
-    public function testGray()
+    public function testGray(): void
     {
         $start = new Color(0, 0, 0, 1);
         $end = new Color(1, 1, 1, 1);

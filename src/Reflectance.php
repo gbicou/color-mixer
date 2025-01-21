@@ -181,6 +181,12 @@ class Reflectance
         return Math::dot($this->R, self::CIE_CMF_Z);
     }
 
+
+    /**
+     * Return the linear RGB values of the color represented by this reflectance.
+     *
+     * @return float[] linear RGB components
+     */
     public function toLinearRGB(): array
     {
         $xyz = [$this->getX(), $this->getY(), $this->getZ()];

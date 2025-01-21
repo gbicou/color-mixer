@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class MixerTest extends TestCase
 {
-    public function testYellowAndBlueMakeGreen()
+    public function testYellowAndBlueMakeGreen(): void
     {
         $yellow = ColorFactory::newRgb('#ffff00');
         $blue = ColorFactory::newRgb('#0000ff');
