@@ -27,7 +27,7 @@ class Melange implements MelangeInterface
 
         [$red, $green, $blue] = $R->toLinearRGB();
 
-        $opacity = Math::lerp($color1->getOpacity(), $color2->getOpacity(), $t);
+        $opacity = Math::interpolate($color1->getOpacity(), $color2->getOpacity(), $t);
 
         return new ColorData($red, $green, $blue, $opacity);
     }

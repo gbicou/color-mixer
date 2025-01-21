@@ -162,24 +162,24 @@ class Reflectance
 
     public function getX(): float
     {
-        return Math::dotproduct($this->R, self::CIE_CMF_X);
+        return Math::dot($this->R, self::CIE_CMF_X);
     }
     public function getY(): float
     {
-        return Math::dotproduct($this->R, self::CIE_CMF_Y);
+        return Math::dot($this->R, self::CIE_CMF_Y);
     }
     public function getZ(): float
     {
-        return Math::dotproduct($this->R, self::CIE_CMF_Z);
+        return Math::dot($this->R, self::CIE_CMF_Z);
     }
 
     public function toLinearRGB(): array
     {
         $xyz = [$this->getX(), $this->getY(), $this->getZ()];
 
-        $r = Math::dotproduct(self::XYZ_R, $xyz);
-        $g = Math::dotproduct(self::XYZ_G, $xyz);
-        $b = Math::dotproduct(self::XYZ_B, $xyz);
+        $r = Math::dot(self::XYZ_R, $xyz);
+        $g = Math::dot(self::XYZ_G, $xyz);
+        $b = Math::dot(self::XYZ_B, $xyz);
 
         return [$r, $g, $b];
     }
