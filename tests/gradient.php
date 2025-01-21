@@ -5,8 +5,8 @@ require __DIR__ . '/../vendor/autoload.php';
 use Bicou\ColorMixer\Couleur\CouleurMixer;
 use matthieumastadenis\couleur\ColorFactory;
 
-$from = ColorFactory::newRgb('#ffff00');
-$to   = ColorFactory::newRgb('#0000ff');
+$from = ColorFactory::newRgb('#000');
+$to   = ColorFactory::newRgb('#FFF');
 
 echo '<div>';
 

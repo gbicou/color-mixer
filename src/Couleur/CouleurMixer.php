@@ -3,14 +3,14 @@
 namespace Bicou\ColorMixer\Couleur;
 
 use Bicou\ColorMixer\ColorInterface;
-use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerBase;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
 
 /**
  * Color mixer adapter
  */
-class CouleurMixer extends Mixer
+class CouleurMixer extends MixerBase
 {
     private ColorInterface $begin;
 

@@ -2,14 +2,14 @@
 
 namespace Bicou\ColorMixer\Couleur;
 
-use Bicou\ColorMixer\Color;
+use Bicou\ColorMixer\ColorBase;
 
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 
 /**
  * Color adapter
  */
-class CouleurColor extends Color
+class CouleurColor extends ColorBase
 {
     private CouleurColorInterface $linear;
     public function __construct(

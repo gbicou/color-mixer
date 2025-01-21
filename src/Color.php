@@ -2,20 +2,44 @@
 
 namespace Bicou\ColorMixer;
 
-abstract class Color implements ColorInterface
+/**
+ * Basic immutable color data holder
+ */
+class Color extends ColorBase
 {
-    public function getWeights(): array
+    /**
+     * Create a new color from components
+     *
+     * @param float $red     Linear red component (0.0 - 1.0)
+     * @param float $green   Linear green component (0.0 - 1.0)
+     * @param float $blue    Linear blue component (0.0 - 1.0)
+     * @param float $opacity Linear opacity (0.0 - 1.0), default 1.0
+     */
+    public function __construct(
+        private readonly float $red,
+        private readonly float $green,
+        private readonly float $blue,
+        private readonly float $opacity = 1.0,
+    ) {
+
+    }
+    public function getRed(): float
     {
-        $w = min($this->getRed(), $this->getGreen(), $this->getBlue());
-        $lrgb = [$this->getRed() - $w, $this->getGreen() - $w, $this->getBlue() - $w];
+        return $this->red;
+    }
 
-        $c = min($lrgb[1], $lrgb[2]);
-        $m = min($lrgb[0], $lrgb[2]);
-        $y = min($lrgb[0], $lrgb[1]);
-        $r = max(0, min($lrgb[0] - $lrgb[2], $lrgb[0] - $lrgb[1]));
-        $g = max(0, min($lrgb[1] - $lrgb[2], $lrgb[1] - $lrgb[0]));
-        $b = max(0, min($lrgb[2] - $lrgb[1], $lrgb[2] - $lrgb[0]));
+    public function getGreen(): float
+    {
+        return $this->green;
+    }
 
-        return [$w, $c, $m, $y, $r, $g, $b];
+    public function getBlue(): float
+    {
+        return $this->blue;
+    }
+
+    public function getOpacity(): float
+    {
+        return $this->opacity;
     }
 }
