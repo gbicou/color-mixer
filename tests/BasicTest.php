@@ -1,4 +1,5 @@
 <?php
+namespace Bicou\ColorMixer\Tests;
 
 use Bicou\ColorMixer\Color;
 use Bicou\ColorMixer\Mixer;
