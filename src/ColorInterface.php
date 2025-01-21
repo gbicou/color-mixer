@@ -15,5 +15,8 @@ interface ColorInterface
 
     public function getOpacity(): float;
 
+    /**
+     * @return array<float>
+     */
     public function getWeights(): array;
 }
