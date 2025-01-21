@@ -114,7 +114,12 @@ class Reflectance
      */
     const array XYZ_B = [  0.05563007969699366, -0.20397695888897652,  1.0569715142428786  ];
 
-    private $R = [];
+    /**
+     * Components
+     *
+     * @var float[] array of SIZE elements
+     */
+    private array $R = [];
 
     public function __construct(
         ?ColorInterface $color = null

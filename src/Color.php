@@ -4,9 +4,6 @@ namespace Bicou\Melange;
 
 abstract class Color implements ColorInterface
 {
-    /**
-     * @return array<float>
-     */
     public function getWeights(): array
     {
         $w = min($this->getRed(), $this->getGreen(), $this->getBlue());

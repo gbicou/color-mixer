@@ -2,13 +2,24 @@
 
 namespace Bicou\Melange;
 
+/**
+ * Basic immutable color data holder
+ */
 class ColorData extends Color
 {
+    /**
+     * Create a new color from components
+     *
+     * @param float $red     Linear red component (0.0 - 1.0)
+     * @param float $green   Linear green component (0.0 - 1.0)
+     * @param float $blue    Linear blue component (0.0 - 1.0)
+     * @param float $opacity Linear opacity (0.0 - 1.0), default 1.0
+     */
     public function __construct(
-        private float $red,
-        private float $green,
-        private float $blue,
-        private float $opacity = 1.0,
+        private readonly float $red,
+        private readonly float $green,
+        private readonly float $blue,
+        private readonly float $opacity = 1.0,
     ) {
 
     }

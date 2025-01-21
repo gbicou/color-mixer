@@ -2,12 +2,12 @@
 
 namespace Bicou\Melange;
 
-class Melange implements MelangeInterface
+abstract class Mix implements MixInterface
 {
-    public static function mix(ColorInterface $color1, ColorInterface $color2, float $ratio): ColorInterface
+    final public function at(float $ratio): ColorInterface
     {
-        $R1 = new Reflectance($color1);
-        $R2 = new Reflectance($color2);
+        $R1 = new Reflectance($this->getBegin());
+        $R2 = new Reflectance($this->getEnd());
 
         $l1 = $R1->getY();
         $l2 = $R2->getY();
@@ -27,7 +27,11 @@ class Melange implements MelangeInterface
 
         [$red, $green, $blue] = $R->toLinearRGB();
 
-        $opacity = Math::interpolate($color1->getOpacity(), $color2->getOpacity(), $t);
+        $opacity = Math::interpolate(
+            $this->getBegin()->getOpacity(),
+            $this->getEnd()->getOpacity(),
+            $t
+        );
 
         return new ColorData($red, $green, $blue, $opacity);
     }

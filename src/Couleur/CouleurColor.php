@@ -6,6 +6,9 @@ use Bicou\Melange\Color;
 
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 
+/**
+ * Color adapter
+ */
 class CouleurColor extends Color
 {
     private CouleurColorInterface $linear;
