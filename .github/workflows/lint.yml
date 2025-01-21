@@ -19,7 +19,7 @@ jobs:
       - name: Composer Install dependencies
         uses: php-actions/composer@v6
 
-      - name: PHPUnit Tests
+      - name: PHPStan
         uses: php-actions/phpstan@v3
         with:
           path: src/ tests/

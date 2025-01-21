@@ -38,6 +38,7 @@ interface ColorInterface
     /**
      * Get the set of weights for the spectral mixing.
      *
+     * @return float[] The array of weights
      */
     public function getWeights(): array;
 }
