@@ -1,6 +1,6 @@
 <?php
 
-namespace Bicou\utils;
+namespace Bicou\Melange;
 
 class Math
 {
