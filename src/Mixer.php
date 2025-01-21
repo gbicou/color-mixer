@@ -7,8 +7,7 @@ class Mixer extends MixerBase
     public function __construct(
         private readonly ColorInterface $begin,
         private readonly ColorInterface $end
-    )
-    {
+    ) {
     }
 
     /**

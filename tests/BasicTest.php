@@ -9,8 +9,8 @@ class BasicTest extends TestCase
 {
     public function testOpacity()
     {
-        $start = new Color(1,1,1,0);
-        $end = new Color(1,1,1,1);
+        $start = new Color(1, 1, 1, 0);
+        $end = new Color(1, 1, 1, 1);
 
         $middle = (new Mixer($start, $end))->at(0.5);
 
@@ -19,8 +19,8 @@ class BasicTest extends TestCase
 
     public function testGray()
     {
-        $start = new Color(0,0,0,1);
-        $end = new Color(1,1,1,1);
+        $start = new Color(0, 0, 0, 1);
+        $end = new Color(1, 1, 1, 1);
 
         $middle = (new Mixer($start, $end))->at(0.5);
 
