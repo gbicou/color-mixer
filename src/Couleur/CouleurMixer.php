@@ -2,36 +2,20 @@
 
 namespace Bicou\ColorMixer\Couleur;
 
-use Bicou\ColorMixer\ColorInterface;
-use Bicou\ColorMixer\MixerBase;
+use Bicou\ColorMixer\Mixer;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
 
 /**
  * Color mixer adapter
  */
-class CouleurMixer extends MixerBase
+class CouleurMixer extends Mixer
 {
-    private ColorInterface $begin;
-
-    private ColorInterface $end;
-
     public function __construct(
         CouleurColorInterface $begin,
         CouleurColorInterface $end
     ) {
-        $this->begin = new CouleurColor($begin);
-        $this->end = new CouleurColor($end);
-    }
-
-    public function getBegin(): ColorInterface
-    {
-        return $this->begin;
-    }
-
-    public function getEnd(): ColorInterface
-    {
-        return $this->end;
+        parent::__construct(new CouleurColor($begin), new CouleurColor($end));
     }
 
     public function atCouleur(float $ratio): CouleurColorInterface
