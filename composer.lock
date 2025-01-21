@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e89c21dd607b4e5c70e76e00c36d737b",
+    "content-hash": "3a8e1ec21b8abdd0ecfc09d083abeb62",
     "packages": [
         {
             "name": "matthieumastadenis/couleur",
@@ -4244,7 +4244,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1"
+        "php": ">=8.2"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
