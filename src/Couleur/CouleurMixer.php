@@ -1,16 +1,16 @@
 <?php
 
-namespace Bicou\Melange\Couleur;
+namespace Bicou\ColorMixer\Couleur;
 
-use Bicou\Melange\ColorInterface;
-use Bicou\Melange\Mix;
+use Bicou\ColorMixer\ColorInterface;
+use Bicou\ColorMixer\Mixer;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
 
 /**
- * Color mix adapter
+ * Color mixer adapter
  */
-class CouleurMix extends Mix
+class CouleurMixer extends Mixer
 {
     private ColorInterface $begin;
 

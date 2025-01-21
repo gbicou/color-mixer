@@ -1,8 +1,8 @@
 <?php
 
-namespace Bicou\Melange\Couleur;
+namespace Bicou\ColorMixer\Couleur;
 
-use Bicou\Melange\Color;
+use Bicou\ColorMixer\Color;
 
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 

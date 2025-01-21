@@ -1,6 +1,6 @@
 <?php
 
-namespace Bicou\Melange;
+namespace Bicou\ColorMixer;
 
 /**
  * An immutable color in the linear RGB space

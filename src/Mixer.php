@@ -1,8 +1,8 @@
 <?php
 
-namespace Bicou\Melange;
+namespace Bicou\ColorMixer;
 
-abstract class Mix implements MixInterface
+abstract class Mixer implements MixerInterface
 {
     final public function at(float $ratio): ColorInterface
     {

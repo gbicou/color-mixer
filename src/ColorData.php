@@ -1,6 +1,6 @@
 <?php
 
-namespace Bicou\Melange;
+namespace Bicou\ColorMixer;
 
 /**
  * Basic immutable color data holder

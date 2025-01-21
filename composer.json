@@ -1,7 +1,9 @@
 {
+  "name": "bicou/color-mixer",
+  "description": "Spectral color mixer",
   "autoload": {
     "psr-4": {
-      "Bicou\\Melange\\": "src/"
+      "Bicou\\ColorMixer\\": "src/"
     }
   },
   "require-dev": {

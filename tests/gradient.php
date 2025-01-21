@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Bicou\ColorMixer\Couleur\CouleurMixer;
 use matthieumastadenis\couleur\ColorFactory;
 
 $from = ColorFactory::newRgb('#ffff00');
@@ -9,7 +10,7 @@ $to   = ColorFactory::newRgb('#0000ff');
 
 echo '<div>';
 
-$mix = new \Bicou\Melange\Couleur\CouleurMix($from, $to);
+$mix = new CouleurMixer($from, $to);
 
 for ($i = 0; $i < 1; $i+=0.10) {
     $m = $mix->atCouleur($i);
