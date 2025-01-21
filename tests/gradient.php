@@ -3,10 +3,10 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Bicou\ColorMixer\Couleur\CouleurMixer;
-use matthieumastadenis\couleur\ColorFactory;
+use matthieumastadenis\couleur\colors\HexRgb;
 
-$from = ColorFactory::newRgb('#ffcc00');
-$to   = ColorFactory::newRgb('#0066cc');
+$from = new HexRgb('ff', 'cc', '00');
+$to   = new HexRgb('00', '66', 'cc');
 
 echo '<div>';
 
