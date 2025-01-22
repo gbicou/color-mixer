@@ -10,19 +10,6 @@ class Reflectance
     /** @var float */
     private const EPSILON = 0.00000001;
 
-    // K1 and K2 are used for the Saunderson correction which is used for how the color looks behind a refractive
-    // surface like glass
-    //
-    // 1 is used for a vacuum, no surface
-    //
-    // Refractive Index
-    //
-    // https://en.wikipedia.org/wiki/Refractive_index
-    // https://en.wikipedia.org/wiki/List_of_refractive_indices
-    //
-    // Glass = 1.5
-    // Vacuum = 1
-
     /**
      * @var float[]
      */
