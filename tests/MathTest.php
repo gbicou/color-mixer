@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class MathTest extends TestCase
 {
 
-    public function testConcentration()
+    public function testConcentration(): void
     {
         $this->assertEqualsWithDelta(0, Math::concentration(0, 1, 0), 0.00001);
         $this->assertEqualsWithDelta(1, Math::concentration(0, 1, 1), 0.00001);
@@ -17,20 +17,20 @@ class MathTest extends TestCase
         $this->assertEqualsWithDelta(1, Math::concentration(0, 1, 0.5), 0.00001);
     }
 
-    public function testConcentrationException()
+    public function testConcentrationException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         Math::concentration(0, 1, 2);
     }
 
-    public function testDot()
+    public function testDot(): void
     {
         $this->assertEqualsWithDelta(32, Math::dot([1, 2, 3], [4, 5, 6]), 0.00001);
         $this->assertEqualsWithDelta(0.32, Math::dot([0.1, 0.2, 0.3], [0.4, 0.5, 0.6]), 0.00001);
         $this->assertEqualsWithDelta(0.6, Math::dot([1, 2, 3], [0.1, 0.1, 0.1]), 0.00001);
     }
 
-    public function testInterpolate()
+    public function testInterpolate(): void
     {
         $this->assertEquals(0, Math::interpolate(0, 1, 0));
         $this->assertEquals(1, Math::interpolate(0, 1, 1));
@@ -42,7 +42,7 @@ class MathTest extends TestCase
         $this->assertEquals(15, Math::interpolate(10, 20, 0.5));
     }
 
-    public function testInterpolateException()
+    public function testInterpolateException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         Math::interpolate(0, 1, 2);
