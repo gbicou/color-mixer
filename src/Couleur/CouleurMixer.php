@@ -7,13 +7,13 @@ use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
 
 /**
- * Color mixer adapter
+ * Color mixer adapter.
  */
 class CouleurMixer extends Mixer
 {
     public function __construct(
         CouleurColorInterface $begin,
-        CouleurColorInterface $end
+        CouleurColorInterface $end,
     ) {
         parent::__construct(new CouleurColor($begin), new CouleurColor($end));
     }

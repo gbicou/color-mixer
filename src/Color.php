@@ -3,12 +3,12 @@
 namespace Bicou\ColorMixer;
 
 /**
- * Basic immutable color data holder
+ * Basic immutable color data holder.
  */
 class Color extends ColorBase
 {
     /**
-     * Create a new color from components
+     * Create a new color from components.
      *
      * @param float $red     Linear red component (0.0 - 1.0)
      * @param float $green   Linear green component (0.0 - 1.0)
@@ -21,8 +21,8 @@ class Color extends ColorBase
         private readonly float $blue,
         private readonly float $opacity = 1.0,
     ) {
-
     }
+
     public function getRed(): float
     {
         return $this->red;

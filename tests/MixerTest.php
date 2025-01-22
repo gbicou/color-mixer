@@ -1,4 +1,5 @@
 <?php
+
 namespace Bicou\ColorMixer\Tests;
 
 use Bicou\ColorMixer\Couleur\CouleurMixer;
@@ -10,8 +11,8 @@ class MixerTest extends TestCase
     public function testYellowAndBlueMakeGreen(): void
     {
         $yellow = new HexRgb('ff', 'ff', '00');
-        $blue   = new HexRgb('00', '00', 'ff');
-        $green  = new HexRgb('38', '8F', '54');
+        $blue = new HexRgb('00', '00', 'ff');
+        $green = new HexRgb('38', '8F', '54');
 
         $middle = (new CouleurMixer($yellow, $blue))->atCouleur(0.5);
 
@@ -20,7 +21,7 @@ class MixerTest extends TestCase
 
     public function testSameStartAndEnd(): void
     {
-        $green  = new HexRgb('38', '8F', '54');
+        $green = new HexRgb('38', '8F', '54');
         $mixer = new CouleurMixer($green, $green);
 
         $middle = $mixer->atCouleur(0.5);

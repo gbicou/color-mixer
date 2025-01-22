@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class BasicTest extends TestCase
 {
-    const DELTA = 0.001;
+    private const DELTA = 0.001;
 
     public function testOpacity(): void
     {

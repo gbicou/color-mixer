@@ -3,16 +3,15 @@
 namespace Bicou\ColorMixer\Couleur;
 
 use Bicou\ColorMixer\Color;
-
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 
 /**
- * Color adapter
+ * Color adapter.
  */
 class CouleurColor extends Color
 {
     public function __construct(
-        CouleurColorInterface $color
+        CouleurColorInterface $color,
     ) {
         $linear = $color->toLinRgb();
 

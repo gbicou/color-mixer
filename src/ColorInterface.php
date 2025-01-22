@@ -3,7 +3,7 @@
 namespace Bicou\ColorMixer;
 
 /**
- * An immutable color in the linear RGB space
+ * An immutable color in the linear RGB space.
  */
 interface ColorInterface
 {
