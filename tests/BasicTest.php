@@ -7,6 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class BasicTest extends TestCase
 {
+    const DELTA = 0.001;
+
     public function testOpacity(): void
     {
         $start = new Color(1, 1, 1, 0);
@@ -25,10 +27,33 @@ class BasicTest extends TestCase
         $middle = (new Mixer($start, $end))->at(0.5);
 
         $grey = 0.381780769;
-        $delta = 0.001;
 
-        $this->assertEqualsWithDelta($grey, $middle->getRed(), $delta);
-        $this->assertEqualsWithDelta($grey, $middle->getGreen(), $delta);
-        $this->assertEqualsWithDelta($grey, $middle->getBlue(), $delta);
+        $this->assertEqualsWithDelta($grey, $middle->getRed(), self::DELTA);
+        $this->assertEqualsWithDelta($grey, $middle->getGreen(), self::DELTA);
+        $this->assertEqualsWithDelta($grey, $middle->getBlue(), self::DELTA);
+    }
+
+    public function testRatioOverflow(): void
+    {
+        $start = new Color(1, 1, 1, 0);
+        $end = new Color(1, 1, 1, 1);
+        $mixer = new Mixer($start, $end);
+
+        $this->expectException(\InvalidArgumentException::class);
+        $mixer->at(1.5);
+    }
+
+    public function testStart0Stop1(): void
+    {
+        $start = new Color(0, 0, 0, 0);
+        $stop = new Color(1, 1, 1, 1);
+
+        $mixer = new Mixer($start, $stop);
+
+        $begin = $mixer->at(0);
+        $this->assertEqualsWithDelta($begin->getWeights(), $start->getWeights(), self::DELTA);
+
+        $end = $mixer->at(1);
+        $this->assertEqualsWithDelta($end->getWeights(), $stop->getWeights(), self::DELTA);
     }
 }

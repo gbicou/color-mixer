@@ -17,4 +17,13 @@ class MixerTest extends TestCase
 
         $this->assertEquals($green->coordinates(), $middle->toHexRgb()->coordinates());
     }
+
+    public function testSameStartAndEnd(): void
+    {
+        $green  = new HexRgb('38', '8F', '54');
+        $mixer = new CouleurMixer($green, $green);
+
+        $middle = $mixer->atCouleur(0.5);
+        $this->assertEquals($green->coordinates(), $middle->toHexRgb()->coordinates());
+    }
 }
