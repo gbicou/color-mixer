@@ -3,7 +3,7 @@
 namespace Bicou\ColorMixer;
 
 /**
- * Basic immutable color data holder.
+ * Basic immutable color data in the linear RGB space.
  */
 class Color extends ColorBase
 {

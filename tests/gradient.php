@@ -12,7 +12,7 @@ echo '<div>';
 
 $mix = new CouleurMixer($from, $to);
 
-for ($i = 0; $i < 1; $i += 0.10) {
+for ($i = 0; $i <= 1; $i += 0.2) {
     $m = $mix->atCouleur($i);
 
     echo '<div style="background: ',$m->toHexRgb(),'; padding: 10px; margin: 2px">';
@@ -21,3 +21,4 @@ for ($i = 0; $i < 1; $i += 0.10) {
 }
 
 echo '</div>';
+

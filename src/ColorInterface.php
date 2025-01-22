@@ -34,11 +34,4 @@ interface ColorInterface
      * @return float The opacity value (0.0 - 1.0)
      */
     public function getOpacity(): float;
-
-    /**
-     * Get the set of weights for the spectral mixing.
-     *
-     * @return float[] The array of weights
-     */
-    public function getWeights(): array;
 }

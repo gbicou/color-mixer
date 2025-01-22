@@ -51,9 +51,9 @@ class BasicTest extends TestCase
         $mixer = new Mixer($start, $stop);
 
         $begin = $mixer->at(0);
-        $this->assertEqualsWithDelta($begin->getWeights(), $start->getWeights(), self::DELTA);
+        $this->assertEqualsWithDelta($begin, $start, self::DELTA);
 
         $end = $mixer->at(1);
-        $this->assertEqualsWithDelta($end->getWeights(), $stop->getWeights(), self::DELTA);
+        $this->assertEqualsWithDelta($end, $stop, self::DELTA);
     }
 }

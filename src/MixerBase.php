@@ -14,8 +14,8 @@ abstract class MixerBase implements MixerInterface
 
         $t = Math::concentration($l1, $l2, $ratio);
 
-        $R = new Reflectance();
-        for ($i = 0; $i < Reflectance::SIZE; ++$i) {
+        $R = new ReflectanceBase();
+        for ($i = 0; $i < ReflectanceBase::SIZE; ++$i) {
             $KS = (1 - $t) * ((1 - $R1->getComponent($i)) ** 2 / (2 * $R1->getComponent($i))) + $t * ((1 - $R2->getComponent($i)) ** 2 / (2 * $R2->getComponent($i)));
             $KM = 1 + $KS - sqrt($KS ** 2 + 2 * $KS);
 
