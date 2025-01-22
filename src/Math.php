@@ -46,4 +46,18 @@ class Math
 
         return $t1 + $t2 ? ($t2 / ($t1 + $t2)) : 0;
     }
+
+    /**
+     * Clamps a value to the range [$min, $max].
+     *
+     * @param float $value the value to be clamped
+     * @param float $min   the lower bound of the range
+     * @param float $max   the upper bound of the range
+     *
+     * @return float the clamped value
+     */
+    public static function clamp(float $value, float $min, float $max): float
+    {
+        return min(max($value, $min), $max);
+    }
 }
