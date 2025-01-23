@@ -4,10 +4,44 @@ namespace Bicou\ColorMixer;
 
 abstract class MixerBase implements MixerInterface
 {
+    protected ColorInterface $begin;
+
+    protected Reflectance $beginReflectance;
+
+    public function setBegin(ColorInterface $color): static
+    {
+        $this->begin = $color;
+        $this->beginReflectance = new Reflectance($color);
+
+        return $this;
+    }
+
+    public function getBegin(): ColorInterface
+    {
+        return $this->begin;
+    }
+
+    protected ColorInterface $end;
+
+    protected Reflectance $endReflectance;
+
+    public function setEnd(ColorInterface $color): static
+    {
+        $this->end = $color;
+        $this->endReflectance = new Reflectance($color);
+
+        return $this;
+    }
+
+    public function getEnd(): ColorInterface
+    {
+        return $this->end;
+    }
+
     final public function at(float $ratio): ColorInterface
     {
-        $R1 = new Reflectance($this->getBegin());
-        $R2 = new Reflectance($this->getEnd());
+        $R1 = $this->beginReflectance;
+        $R2 = $this->endReflectance;
 
         $l1 = $R1->getY();
         $l2 = $R2->getY();

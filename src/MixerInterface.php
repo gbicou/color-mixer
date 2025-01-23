@@ -8,18 +8,36 @@ namespace Bicou\ColorMixer;
 interface MixerInterface
 {
     /**
-     * Returns the start color in the gradient.
+     * Returns the start color in the mixer.
      *
      * @return ColorInterface The start color
      */
     public function getBegin(): ColorInterface;
 
     /**
-     * Returns the stop color in the gradient.
+     * Sets the start color in the mixer.
+     *
+     * @param ColorInterface $color The new start color
+     *
+     * @return static The current instance
+     */
+    public function setBegin(ColorInterface $color): static;
+
+    /**
+     * Returns the stop color in the mixer.
      *
      * @return ColorInterface The stop color
      */
     public function getEnd(): ColorInterface;
+
+    /**
+     * Sets the stop color in the mixer.
+     *
+     * @param ColorInterface $color The new stop color
+     *
+     * @return static The current instance
+     */
+    public function setEnd(ColorInterface $color): static;
 
     /**
      * Returns a color at the specified ratio between the start and stop colors.
