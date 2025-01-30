@@ -18,6 +18,7 @@
   },
   "require": {
     "php": ">=8.2",
-    "matthieumastadenis/couleur": "v0.1.2"
+    "matthieumastadenis/couleur": "v0.1.2",
+    "spatie/color": "1.7.0"
   }
 }

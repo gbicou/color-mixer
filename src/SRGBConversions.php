@@ -22,18 +22,18 @@ class SRGBConversions
     /**
      * Translate the color from the sRGB color space to the linear RGB color space.
      *
-     * @param float $red   sRGB red component (0.0 - 1.0)
-     * @param float $green sRGB green component (0.0 - 1.0)
-     * @param float $blue  sRGB blue component (0.0 - 1.0)
+     * @param float $red   sRGB red component (0.0 - 255.0)
+     * @param float $green sRGB green component (0.0 - 255.0)
+     * @param float $blue  sRGB blue component (0.0 - 255.0)
      *
      * @return float[] [$red, $green, $blue]
      */
     public static function SRGBToLinear(float $red, float $green, float $blue): array
     {
         return [
-            Math::clamp(self::srgb_to_linear_component($red), 0, 1),
-            Math::clamp(self::srgb_to_linear_component($green), 0, 1),
-            Math::clamp(self::srgb_to_linear_component($blue), 0, 1),
+            Math::clamp(self::srgb_to_linear_component($red / 255), 0, 1),
+            Math::clamp(self::srgb_to_linear_component($green / 255), 0, 1),
+            Math::clamp(self::srgb_to_linear_component($blue / 255), 0, 1),
         ];
     }
 
@@ -44,14 +44,14 @@ class SRGBConversions
      * @param float $green linear green component (0.0 - 1.0)
      * @param float $blue  linear blue component (0.0 - 1.0)
      *
-     * @return float[] [$red, $green, $blue]
+     * @return int[] [$red, $green, $blue]
      */
     public static function LinearToSRGB(float $red, float $green, float $blue): array
     {
         return [
-            Math::clamp(self::linear_to_srgb_component($red), 0, 1),
-            Math::clamp(self::linear_to_srgb_component($green), 0, 1),
-            Math::clamp(self::linear_to_srgb_component($blue), 0, 1),
+            Math::clamp(round(self::linear_to_srgb_component($red) * 255), 0, 255),
+            Math::clamp(round(self::linear_to_srgb_component($green) * 255), 0, 255),
+            Math::clamp(round(self::linear_to_srgb_component($blue) * 255), 0, 255),
         ];
     }
 }

@@ -5,8 +5,8 @@ require __DIR__.'/../vendor/autoload.php';
 use Bicou\ColorMixer\Couleur\CouleurMixer;
 use matthieumastadenis\couleur\colors\HexRgb;
 
-$from = new HexRgb('ff', 'dd', '66');
-$to = new HexRgb('00', '66', 'ff');
+$from = new HexRgb('ff', 'ee', '99');
+$to = new HexRgb('33', '66', 'ff');
 
 echo '<div>';
 
