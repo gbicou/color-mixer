@@ -3,14 +3,17 @@
 namespace Bicou\ColorMixer\Spatie;
 
 use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerImplementation;
 use Bicou\ColorMixer\SRGBConversions;
 use Spatie\Color\Color as SpatieColorInterface;
 use Spatie\Color\Rgb;
 
 /**
  * Color mixer adapter.
+ *
+ * @implements MixerImplementation<SpatieColorInterface>
  */
-class SpatieMixer extends Mixer
+class SpatieMixer extends Mixer implements MixerImplementation
 {
     public function __construct(
         SpatieColorInterface $begin,
@@ -19,7 +22,7 @@ class SpatieMixer extends Mixer
         parent::__construct(new SpatieColor($begin), new SpatieColor($end));
     }
 
-    public function atSpatie(float $ratio): SpatieColorInterface
+    public function mix(float $ratio): SpatieColorInterface
     {
         $color = $this->at($ratio);
 

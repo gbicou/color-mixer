@@ -3,13 +3,16 @@
 namespace Bicou\ColorMixer\Couleur;
 
 use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerImplementation;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
 
 /**
  * Color mixer adapter.
+ *
+ * @implements MixerImplementation<CouleurColorInterface>
  */
-class CouleurMixer extends Mixer
+class CouleurMixer extends Mixer implements MixerImplementation
 {
     public function __construct(
         CouleurColorInterface $begin,
@@ -18,7 +21,7 @@ class CouleurMixer extends Mixer
         parent::__construct(new CouleurColor($begin), new CouleurColor($end));
     }
 
-    public function atCouleur(float $ratio): CouleurColorInterface
+    public function mix(float $ratio): CouleurColorInterface
     {
         $color = $this->at($ratio);
 

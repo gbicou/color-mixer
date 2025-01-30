@@ -10,10 +10,10 @@ $to = new HexRgb('33', '66', 'ff');
 
 echo '<div>';
 
-$mix = new CouleurMixer($from, $to);
+$mixer = new CouleurMixer($from, $to);
 
 for ($i = 0; $i <= 1; $i += 0.2) {
-    $m = $mix->atCouleur($i);
+    $m = $mixer->mix($i);
 
     echo '<div style="background: ',$m->toHexRgb(),'; padding: 10px; margin: 1px">';
     echo $m->toHexRgb(),' ',$m->toLinRgb();
