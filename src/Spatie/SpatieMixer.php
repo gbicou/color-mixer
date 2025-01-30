@@ -25,6 +25,6 @@ class SpatieMixer extends Mixer
 
         [$r, $g, $b] = SRGBConversions::LinearToSRGB($color->getRed(), $color->getGreen(), $color->getBlue());
 
-        return new Rgb($r, $g, $b);
+        return new Rgb((int) round($r), (int) round($g), (int) round($b));
     }
 }
