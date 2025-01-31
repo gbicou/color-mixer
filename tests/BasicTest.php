@@ -13,7 +13,7 @@ class BasicTest extends TestCase
         $start = new Color(1, 1, 1, 0);
         $end = new Color(1, 1, 1, 1);
 
-        $middle = (new Mixer($start, $end))->at(0.5);
+        $middle = (new BasicMixer($start, $end))->at(0.5);
 
         $this->assertEquals(0.5, $middle->getOpacity());
     }
@@ -23,7 +23,7 @@ class BasicTest extends TestCase
         $start = new Color(0, 0, 0, 1);
         $end = new Color(1, 1, 1, 1);
 
-        $middle = (new Mixer($start, $end))->at(0.5);
+        $middle = (new BasicMixer($start, $end))->at(0.5);
 
         $grey = 0.381780769;
 
@@ -36,7 +36,7 @@ class BasicTest extends TestCase
     {
         $start = new Color(1, 1, 1, 0);
         $end = new Color(1, 1, 1, 1);
-        $mixer = new Mixer($start, $end);
+        $mixer = new BasicMixer($start, $end);
 
         $this->expectException(\InvalidArgumentException::class);
         $mixer->at(1.5);
@@ -47,7 +47,7 @@ class BasicTest extends TestCase
         $start = new Color(0, 0, 0, 0);
         $stop = new Color(1, 1, 1, 1);
 
-        $mixer = new Mixer($start, $stop);
+        $mixer = new BasicMixer($start, $stop);
 
         $begin = $mixer->at(0);
         $this->assertEqualsWithDelta($begin, $start, self::DELTA);
