@@ -56,4 +56,31 @@ class BasicTest extends TestCase
         $end = $mixer->at(1);
         $this->assertEqualsWithDelta($end, $stop, self::DELTA);
     }
+
+    public function testIterator(): void
+    {
+        $start = new Color(0, 0, 0, 0);
+        $stop = new Color(1, 1, 1, 1);
+
+        $mixer = new Mixer($start, $stop);
+
+        $middle = $mixer->at(0.5);
+
+        $steps = iterator_to_array($mixer->iterate(1));
+
+        $this->assertEqualsWithDelta($start, $steps[0], self::DELTA);
+        $this->assertEqualsWithDelta($middle, $steps[1], self::DELTA);
+        $this->assertEqualsWithDelta($stop, $steps[2], self::DELTA);
+    }
+
+    public function testIteratorCount(): void
+    {
+        $start = new Color(0, 0, 0, 0);
+        $stop = new Color(1, 1, 1, 1);
+
+        $mixer = new Mixer($start, $stop);
+
+        $this->assertEquals(3, iterator_count($mixer->iterate(1)));
+        $this->assertEquals(5, iterator_count($mixer->iterate(3)));
+    }
 }
