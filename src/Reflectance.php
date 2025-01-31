@@ -71,7 +71,7 @@ class Reflectance extends ReflectanceBase
     ) {
         parent::__construct();
 
-        $weights = ColorWeights::of($color);
+        $weights = $color->getWeights();
 
         for ($i = 0; $i < self::SIZE; ++$i) {
             $this->setComponent($i, max(

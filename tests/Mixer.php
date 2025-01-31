@@ -1,6 +1,9 @@
 <?php
 
-namespace Bicou\ColorMixer;
+namespace Bicou\ColorMixer\Tests;
+
+use Bicou\ColorMixer\ColorInterface;
+use Bicou\ColorMixer\MixerBase;
 
 class Mixer extends MixerBase
 {

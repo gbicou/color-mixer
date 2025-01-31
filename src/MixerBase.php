@@ -4,9 +4,9 @@ namespace Bicou\ColorMixer;
 
 abstract class MixerBase implements MixerInterface
 {
-    protected ColorInterface $begin;
+    private ColorInterface $begin;
 
-    protected Reflectance $beginReflectance;
+    private ReflectanceInterface $beginReflectance;
 
     public function setBegin(ColorInterface $color): static
     {
@@ -16,14 +16,9 @@ abstract class MixerBase implements MixerInterface
         return $this;
     }
 
-    public function getBegin(): ColorInterface
-    {
-        return $this->begin;
-    }
+    private ColorInterface $end;
 
-    protected ColorInterface $end;
-
-    protected Reflectance $endReflectance;
+    private ReflectanceInterface $endReflectance;
 
     public function setEnd(ColorInterface $color): static
     {
@@ -31,11 +26,6 @@ abstract class MixerBase implements MixerInterface
         $this->endReflectance = new Reflectance($color);
 
         return $this;
-    }
-
-    public function getEnd(): ColorInterface
-    {
-        return $this->end;
     }
 
     final public function at(float $ratio): ColorInterface
@@ -62,8 +52,8 @@ abstract class MixerBase implements MixerInterface
         [$red, $green, $blue] = $R->toLinearRGB();
 
         $opacity = Math::interpolate(
-            $this->getBegin()->getOpacity(),
-            $this->getEnd()->getOpacity(),
+            $this->begin->getOpacity(),
+            $this->end->getOpacity(),
             $t
         );
 

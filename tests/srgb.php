@@ -7,7 +7,7 @@ $to = new Bicou\ColorMixer\Color(0, .3, 1);
 
 echo '<div>';
 
-$mix = new Bicou\ColorMixer\Mixer($from, $to);
+$mix = new Bicou\ColorMixer\Tests\Mixer($from, $to);
 
 for ($i = 0; $i <= 1; $i += 0.2) {
     $m = $mix->at($i);

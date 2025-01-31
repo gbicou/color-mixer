@@ -2,7 +2,6 @@
 namespace Bicou\ColorMixer\Tests;
 
 use Bicou\ColorMixer\Color;
-use Bicou\ColorMixer\Mixer;
 use PHPUnit\Framework\TestCase;
 
 class BasicTest extends TestCase

@@ -2,7 +2,7 @@
 
 namespace Bicou\ColorMixer\Couleur;
 
-use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerBase;
 use Bicou\ColorMixer\MixerImplementation;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
@@ -12,13 +12,13 @@ use matthieumastadenis\couleur\colors\LinRgb;
  *
  * @implements MixerImplementation<CouleurColorInterface>
  */
-class CouleurMixer extends Mixer implements MixerImplementation
+class CouleurMixer extends MixerBase implements MixerImplementation
 {
     public function __construct(
         CouleurColorInterface $begin,
         CouleurColorInterface $end,
     ) {
-        parent::__construct(new CouleurColor($begin), new CouleurColor($end));
+        $this->setBegin(new CouleurColor($begin))->setEnd(new CouleurColor($end));
     }
 
     public function mix(float $ratio): CouleurColorInterface
