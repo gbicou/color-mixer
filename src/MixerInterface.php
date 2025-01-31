@@ -17,4 +17,13 @@ interface MixerInterface
      * @return T the interpolated color at the given ratio
      */
     public function at(float $ratio): mixed;
+
+    /**
+     * Yields a sequence of colors from the start to the stop colors with the given number of stops.
+     *
+     * @param int $stops The number of intermediate colors
+     *
+     * @return iterable<T> a sequence of colors (including the start and stop colors)
+     */
+    public function iterate(int $stops): iterable;
 }
