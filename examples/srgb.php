@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $from = new Bicou\ColorMixer\Color(1, 1, .1);
 $to = new Bicou\ColorMixer\Color(0, .3, 1);
