@@ -5,6 +5,14 @@ require __DIR__ . '/../vendor/autoload.php';
 use Bicou\ColorMixer\Mixer;
 use Bicou\ColorMixer\Color;
 use Bicou\ColorMixer\SRGBConversions;
+use Bicou\ColorMixer\ColorInterface;
+
+function colorToCSS(ColorInterface $color): string
+{
+    [$red, $green, $blue] = SRGBConversions::LinearToSRGB($color->getRed(), $color->getGreen(), $color->getBlue());
+
+    return 'color(srgb '.round($red / 255, 5).' '.round($green / 255, 5).' '.round($blue / 255, 5).')';
+}
 
 $from = new Color(1, 1, .1);
 $to = new Color(0, .3, 1);
@@ -13,21 +21,17 @@ echo '<div>';
 
 $mix = new Mixer($from, $to);
 
-for ($i = 0; $i <= 1; $i += 0.2) {
-    $m = $mix->at($i);
+foreach ($mix->iterate(3) as $m) {
+    $background = colorToCSS($m);
 
-    [$red, $green, $blue] = SRGBConversions::LinearToSRGB($m->getRed(), $m->getGreen(), $m->getBlue());
-
-    echo '<div style="background: color(srgb-linear ',$m->getRed(),' ',$m->getGreen(),' ',$m->getBlue(),'); padding: 10px; margin: 1px">';
-    // echo $red,' ',$green,' ',$blue;
-    // echo "<br />";
-    echo $m->getRed(),' ',$m->getGreen(), ' ',$m->getBlue();
+    echo '<div style="background: ',$background,'; padding: 10px; margin: 1px">';
+    echo $background;
     echo '</div>';
 }
 
 echo '</div>';
 
-$from_css = 'color(srgb-linear '.$from->getRed().' '.$from->getGreen().' '.$from->getBlue().')';
-$to_css = 'color(srgb-linear '.$to->getRed().' '.$to->getGreen().' '.$to->getBlue().')';
+$from_css = colorToCSS($from);
+$to_css =  colorToCSS($to);
 
 echo '<div style="margin-top: 10px; height: 120px; padding: 10px; background: linear-gradient(',$from_css,',', $to_css,')">CSS gradient</div>';
