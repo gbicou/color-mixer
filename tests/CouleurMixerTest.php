@@ -14,7 +14,7 @@ class CouleurMixerTest extends TestCase
         $blue = new HexRgb('00', '00', 'ff');
         $green = new HexRgb('38', '8F', '54');
 
-        $middle = (new CouleurMixer($yellow, $blue))->mix(0.5)->toHexRgb();
+        $middle = (new CouleurMixer($yellow, $blue))->at(0.5)->toHexRgb();
 
         $this->assertEquals($green->coordinates(), $middle->coordinates());
     }
@@ -24,7 +24,7 @@ class CouleurMixerTest extends TestCase
         $green = new HexRgb('38', '8F', '54');
         $mixer = new CouleurMixer($green, $green);
 
-        $middle = $mixer->mix(0.5)->toHexRgb();
+        $middle = $mixer->at(0.5)->toHexRgb();
 
         $this->assertEquals($green->coordinates(), $middle->coordinates());
     }

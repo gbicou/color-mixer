@@ -2,30 +2,22 @@
 
 namespace Bicou\ColorMixer;
 
-abstract class MixerBase implements MixerInterface
+/**
+ * Color mixer in the linear RGB space.
+ *
+ * @implements MixerInterface<ColorInterface>
+ */
+class Mixer implements MixerInterface
 {
-    private ColorInterface $begin;
-
     private ReflectanceInterface $beginReflectance;
-
-    public function setBegin(ColorInterface $color): static
-    {
-        $this->begin = $color;
-        $this->beginReflectance = new Reflectance($color);
-
-        return $this;
-    }
-
-    private ColorInterface $end;
-
     private ReflectanceInterface $endReflectance;
 
-    public function setEnd(ColorInterface $color): static
-    {
-        $this->end = $color;
-        $this->endReflectance = new Reflectance($color);
-
-        return $this;
+    public function __construct(
+        private readonly ColorInterface $begin,
+        private readonly ColorInterface $end,
+    ) {
+        $this->beginReflectance = new Reflectance($begin);
+        $this->endReflectance = new Reflectance($end);
     }
 
     final public function at(float $ratio): ColorInterface

@@ -2,17 +2,21 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$from = new Bicou\ColorMixer\Color(1, 1, .1);
-$to = new Bicou\ColorMixer\Color(0, .3, 1);
+use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\Color;
+use Bicou\ColorMixer\SRGBConversions;
+
+$from = new Color(1, 1, .1);
+$to = new Color(0, .3, 1);
 
 echo '<div>';
 
-$mix = new Bicou\ColorMixer\Tests\BasicMixer($from, $to);
+$mix = new Mixer($from, $to);
 
 for ($i = 0; $i <= 1; $i += 0.2) {
     $m = $mix->at($i);
 
-    [$red, $green, $blue] = Bicou\ColorMixer\SRGBConversions::LinearToSRGB($m->getRed(), $m->getGreen(), $m->getBlue());
+    [$red, $green, $blue] = SRGBConversions::LinearToSRGB($m->getRed(), $m->getGreen(), $m->getBlue());
 
     echo '<div style="background: color(srgb-linear ',$m->getRed(),' ',$m->getGreen(),' ',$m->getBlue(),'); padding: 10px; margin: 1px">';
     // echo $red,' ',$green,' ',$blue;

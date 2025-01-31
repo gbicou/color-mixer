@@ -22,7 +22,7 @@ $blue = Hex::fromString('#3f58fc');
 
 $mixer = new SpatieMixer($yellow, $blue);
 
-$green = $mixer->mix(0.5);
+$green = $mixer->at(0.5);
 echo $green->toHex(); // #7ca64d
 ```
 
@@ -37,6 +37,6 @@ $blue = new HexRgb('3F', '58', 'FC');
 
 $mixer = new CouleurMixer($yellow, $blue);
 
-$green = $mixer->mix(0.5);
+$green = $mixer->at(0.5);
 echo $green->toHexRgb(); // #7CA64D
 ```

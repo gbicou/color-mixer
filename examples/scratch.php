@@ -9,5 +9,5 @@ $blue = new HexRgb('3F', '58', 'FC');
 
 $mixer = new CouleurMixer($yellow, $blue);
 
-$green = $mixer->mix(0.5);
+$green = $mixer->at(0.5);
 echo $green->toHexRgb(); // #7CA64D

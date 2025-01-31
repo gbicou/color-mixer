@@ -14,7 +14,7 @@ class SpatieMixerTest extends TestCase
         $blue = Hex::fromString('#0000ff');
         $green = Hex::fromString('#388f54');
 
-        $middle = (new SpatieMixer($yellow, $blue))->mix(0.5)->toHex();
+        $middle = (new SpatieMixer($yellow, $blue))->at(0.5)->toHex();
 
         $this->assertEquals($green->red(), $middle->red());
         $this->assertEquals($green->green(), $middle->green());
@@ -26,7 +26,7 @@ class SpatieMixerTest extends TestCase
         $green = Hex::fromString('#388f54');
         $mixer = new SpatieMixer($green, $green);
 
-        $middle = $mixer->mix(0.5)->toHex();
+        $middle = $mixer->at(0.5)->toHex();
 
         $this->assertEquals($green->red(), $middle->red());
         $this->assertEquals($green->green(), $middle->green());

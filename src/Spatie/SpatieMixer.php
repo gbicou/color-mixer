@@ -2,8 +2,9 @@
 
 namespace Bicou\ColorMixer\Spatie;
 
-use Bicou\ColorMixer\MixerBase;
-use Bicou\ColorMixer\MixerImplementation;
+use Bicou\ColorMixer\ColorInterface;
+use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerInterface;
 use Bicou\ColorMixer\SRGBConversions;
 use Spatie\Color\Color as SpatieColorInterface;
 use Spatie\Color\Rgb;
@@ -11,20 +12,23 @@ use Spatie\Color\Rgb;
 /**
  * Color mixer adapter.
  *
- * @implements MixerImplementation<SpatieColorInterface>
+ * @implements MixerInterface<SpatieColorInterface>
  */
-class SpatieMixer extends MixerBase implements MixerImplementation
+class SpatieMixer implements MixerInterface
 {
+    /** @var MixerInterface<ColorInterface> inner linear rgb mixer */
+    private MixerInterface $mixer;
+
     public function __construct(
         SpatieColorInterface $begin,
         SpatieColorInterface $end,
     ) {
-        $this->setBegin(new SpatieColor($begin))->setEnd(new SpatieColor($end));
+        $this->mixer = new Mixer(new SpatieColor($begin), new SpatieColor($end));
     }
 
-    public function mix(float $ratio): SpatieColorInterface
+    public function at(float $ratio): SpatieColorInterface
     {
-        $color = $this->at($ratio);
+        $color = $this->mixer->at($ratio);
 
         [$r, $g, $b] = SRGBConversions::LinearToSRGB($color->getRed(), $color->getGreen(), $color->getBlue());
 
