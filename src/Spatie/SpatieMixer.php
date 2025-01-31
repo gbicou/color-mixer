@@ -4,6 +4,7 @@ namespace Bicou\ColorMixer\Spatie;
 
 use Bicou\ColorMixer\ColorInterface;
 use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerBase;
 use Bicou\ColorMixer\MixerInterface;
 use Bicou\ColorMixer\SRGBConversions;
 use Spatie\Color\Color as SpatieColorInterface;
@@ -12,9 +13,9 @@ use Spatie\Color\Rgb;
 /**
  * Color mixer adapter.
  *
- * @implements MixerInterface<SpatieColorInterface>
+ * @extends MixerBase<SpatieColorInterface>
  */
-class SpatieMixer implements MixerInterface
+class SpatieMixer extends MixerBase
 {
     /** @var MixerInterface<ColorInterface> inner linear rgb mixer */
     private MixerInterface $mixer;

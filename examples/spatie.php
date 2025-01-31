@@ -12,9 +12,7 @@ echo '<div>';
 
 $mixer = new SpatieMixer($from, $to);
 
-for ($i = 0; $i <= 1; $i += 0.2) {
-    $m = $mixer->at($i);
-
+foreach ($mixer->iterate(3) as $m) {
     echo '<div style="background: ',$m->toHex(),'; padding: 10px; margin: 1px">';
     echo $m->toHex(),' ',$m->toRgb();
     echo '</div>';
