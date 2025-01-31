@@ -4,6 +4,7 @@ namespace Bicou\ColorMixer\Couleur;
 
 use Bicou\ColorMixer\ColorInterface;
 use Bicou\ColorMixer\Mixer;
+use Bicou\ColorMixer\MixerBase;
 use Bicou\ColorMixer\MixerInterface;
 use matthieumastadenis\couleur\ColorInterface as CouleurColorInterface;
 use matthieumastadenis\couleur\colors\LinRgb;
@@ -11,9 +12,9 @@ use matthieumastadenis\couleur\colors\LinRgb;
 /**
  * Color mixer adapter.
  *
- * @implements MixerInterface<CouleurColorInterface>
+ * @extends MixerBase<CouleurColorInterface>
  */
-class CouleurMixer implements MixerInterface
+class CouleurMixer extends MixerBase
 {
     /** @var MixerInterface<ColorInterface> inner linear rgb mixer */
     private MixerInterface $mixer;

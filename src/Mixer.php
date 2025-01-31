@@ -5,9 +5,9 @@ namespace Bicou\ColorMixer;
 /**
  * Color mixer in the linear RGB space.
  *
- * @implements MixerInterface<ColorInterface>
+ * @extends MixerBase<ColorInterface>
  */
-class Mixer implements MixerInterface
+class Mixer extends MixerBase
 {
     private ReflectanceInterface $beginReflectance;
     private ReflectanceInterface $endReflectance;
