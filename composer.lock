@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db2a214cdec3232f49b328b04c95be2d",
+    "content-hash": "d29988561bd1e40f15627cc93f0aff7c",
     "packages": [
         {
             "name": "matthieumastadenis/couleur",

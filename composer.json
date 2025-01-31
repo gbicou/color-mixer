@@ -1,6 +1,7 @@
 {
   "name": "bicou/color-mixer",
   "description": "Spectral color mixer",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Bicou\\ColorMixer\\": "src/"
@@ -19,6 +20,6 @@
   "require": {
     "php": ">=8.2",
     "matthieumastadenis/couleur": "v0.1.2",
-    "spatie/color": "1.7.0"
+    "spatie/color": "^1.7.0"
   }
 }
