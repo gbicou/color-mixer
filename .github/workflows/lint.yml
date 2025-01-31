@@ -22,6 +22,6 @@ jobs:
       - name: PHPStan
         uses: php-actions/phpstan@v3
         with:
-          path: src/ tests/
+          path: src/ tests/ examples/
           level: 6
           error_format: github
