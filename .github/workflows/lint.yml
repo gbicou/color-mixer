@@ -25,9 +25,5 @@ jobs:
       - name: Composer Install dependencies
         uses: php-actions/composer@v6
 
-      - name: PHPStan
-        uses: php-actions/phpstan@v3
-        with:
-          path: src/ tests/ examples/
-          level: 6
-          error_format: github
+      - name: Run PHPStan
+        run: vendor/bin/phpstan --error-format=github
