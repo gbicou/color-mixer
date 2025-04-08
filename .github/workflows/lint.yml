@@ -19,6 +19,9 @@ jobs:
       - name: Setup PHP with tools
         uses: shivammathur/setup-php@v2
 
+      - name: Display composer config
+        run: composer config --list
+
       - name: Install php dependencies
         run: composer install --no-progress --no-interaction
 
