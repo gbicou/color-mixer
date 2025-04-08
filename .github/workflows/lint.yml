@@ -16,14 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache Composer dependencies
-        uses: actions/cache@v4
-        with:
-          path: /tmp/composer-cache
-          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
 
-      - name: Composer Install dependencies
-        uses: php-actions/composer@v6
+      - name: Install php dependencies
+        run: composer install --no-progress --no-interaction
 
       - name: Run PHPStan
         run: vendor/bin/phpstan --error-format=github
