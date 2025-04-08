@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2844b86299726005db2da98695eeefb8",
+    "content-hash": "b21da770bcd6564530fa3f1a25eb28c2",
     "packages": [
         {
             "name": "matthieumastadenis/couleur",
@@ -1269,16 +1269,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.16",
+            "version": "11.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8c37a989b1e42afe82d6d0cf5b284b76ebd73f65"
+                "reference": "fd2e863a2995cdfd864fb514b5e0b28b09895b5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8c37a989b1e42afe82d6d0cf5b284b76ebd73f65",
-                "reference": "8c37a989b1e42afe82d6d0cf5b284b76ebd73f65",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fd2e863a2995cdfd864fb514b5e0b28b09895b5c",
+                "reference": "fd2e863a2995cdfd864fb514b5e0b28b09895b5c",
                 "shasum": ""
             },
             "require": {
@@ -1350,7 +1350,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.16"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.17"
             },
             "funding": [
                 {
@@ -1366,7 +1366,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-08T06:34:47+00:00"
+            "time": "2025-04-08T07:59:11+00:00"
         },
         {
             "name": "psr/container",
