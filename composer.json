@@ -13,7 +13,7 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "11.5.25",
+    "phpunit/phpunit": "11.5.26",
     "friendsofphp/php-cs-fixer": "v3.76.0",
     "phpstan/phpstan": "^2.1"
   },
