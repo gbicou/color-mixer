@@ -18,7 +18,7 @@
     "phpstan/phpstan": "^2.1"
   },
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.4",
     "matthieumastadenis/couleur": "v0.1.2",
     "spatie/color": "^2.0.0"
   }
