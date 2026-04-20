@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "separateMultipleMajor": true,
   "labels": ["dependencies"],
   "packageRules": [
     {
