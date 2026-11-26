@@ -90,16 +90,16 @@
         },
         {
             "name": "spatie/color",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/color.git",
-                "reference": "bcfe1840e32af163555a832dc6225f766a05f710"
+                "reference": "3089e128141a75366d6790e358dff55b68126c53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/color/zipball/bcfe1840e32af163555a832dc6225f766a05f710",
-                "reference": "bcfe1840e32af163555a832dc6225f766a05f710",
+                "url": "https://api.github.com/repos/spatie/color/zipball/3089e128141a75366d6790e358dff55b68126c53",
+                "reference": "3089e128141a75366d6790e358dff55b68126c53",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/color/issues",
-                "source": "https://github.com/spatie/color/tree/2.1.0"
+                "source": "https://github.com/spatie/color/tree/2.1.1"
             },
             "funding": [
                 {
@@ -145,8 +145,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-08T22:16:42+00:00",
-            "published-time": "2026-02-08T22:17:10+00:00"
+            "time": "2026-11-26T11:58:46+00:00",
+            "published-time": "2026-11-26T11:59:12+00:00"
         }
     ],
     "packages-dev": [
